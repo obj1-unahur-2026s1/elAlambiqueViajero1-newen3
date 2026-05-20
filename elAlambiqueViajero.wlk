@@ -1,4 +1,131 @@
-object luke{
+object casaLuke {
+    var recuerdo = paris.recuerdo()
+
+    method guardarRecuerdo(nuevoRecuerdo) {
+        recuerdo = nuevoRecuerdo
+    }
+  
+}
+
+object luke {
+  
+    var vehiculo = alambiqueVeloz
+
+  method viajarSiPuede(lugar) {
+    if(lugar.puedeLlegar(vehiculo)) {
+        vehiculo.viajar()
+        casaLuke.guardarRecuerdo(lugar.recuerdo())
+    }
+  }
+
+  method cambiarVehiculo(nuevoVehiculo) {vehiculo = nuevoVehiculo}
+
+}
+
+object alambiqueVeloz {
+    var cantidadCombustible = 20
+
+    method tieneCombustible() =  cantidadCombustible >= 10
+    
+    method viajar() {cantidadCombustible = cantidadCombustible - 10}
+
+    method esRapido() = true  
+}
+
+object paris {
+
+    method recuerdo() = "Llavero Torre Eiffel"
+
+    method puedeLlegar(movil) {return movil.tieneCombustible()}
+
+
+}
+
+object buenosAires {
+    var presidente = "Alberto Fernandez"
+
+    method recuerdo() = "Mate"
+
+    method tieneLlerva() {}
+
+    method puedeLlegar(movil) {return movil.esRapido()}
+}
+
+object bagdad {
+    var recuerdo = "bidon de petroleo"
+
+    method cambiarRecuerdo(otroRecuerdo) {recuerdo = otroRecuerdo}
+
+    method recuerdo() = recuerdo
+
+}
+
+object lasVegas {
+  
+    var lugarOmenajeado = paris
+
+    method homenaje(lugar) {lugarOmenajeado = lugar}
+
+    method recuerdo() = lugarOmenajeado.recuerdo()
+
+    method puedeLlegar(movil) {return lugarOmenajeado.puedeLlegar(movil)}
+
+}   
+
+object superChatarra {
+  
+}
+
+object rayoMCquen {
+  
+}
+
+object aguilaBlanca {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*object luke{
     var cantidadViajes = 0
     var recuerdo = null
     var vehiculo = alambiqueVeloz
@@ -84,4 +211,4 @@ object tokio {
     method recuerdoTipico() = "Figura de Godzilla"
     
     method puedeLlegar(transporte) = transporte.rapido() && transporte.tieneCombustible()
-}
+}*/
